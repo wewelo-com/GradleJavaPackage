@@ -1,0 +1,36 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+         maven { url "https://s3-us-west-2.amazonaws.com/repo.archipelago.build/releases/" }
+    }
+    dependencies {
+        classpath 'build.archipelago:ArchipelagoPlugin:1.0-SNAPSHOT'
+    }
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+}
+
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'archipelago'
+
+mainClassName = 'com.wewelo.projecttest.Application'
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+test {
+    useJUnitPlatform()
+}

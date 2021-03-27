@@ -1,0 +1,6 @@
+version: 1.0
+buildSystem: Gradle
+libraries:
+- OpenJDK-11.0
+buildTools:
+- GradleBuildSystem-6.7
